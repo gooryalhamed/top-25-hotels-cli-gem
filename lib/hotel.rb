@@ -1,0 +1,2 @@
+class Hotels < Place
+end

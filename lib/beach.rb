@@ -1,0 +1,2 @@
+class Beach < Place
+end

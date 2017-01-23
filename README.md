@@ -1,15 +1,13 @@
-# Top::25::Hotels
+# Top25
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/top/25/hotels`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+allows travilers to find best 25 hotels, restaurants and beaches.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'top-25-hotels'
+gem 'top25', :git => 'https://github.com/gooryalhamed/top25-cli-gem'
 ```
 
 And then execute:
@@ -18,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install top-25-hotels
+    $ gem install top25
 
 ## Usage
 
-TODO: Write usage instructions here
+used as an example of creating your own gem
 
 ## Development
 
@@ -32,10 +30,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/top-25-hotels. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/top25. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+1.Fork it
+2.Create your feature branch (git checkout -b my-new-feature)
+3.Commit your changes (git commit -am 'Added some feature')
+4.Push to the branch (git push origin my-new-feature)
+5.Create new Pull Request
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
