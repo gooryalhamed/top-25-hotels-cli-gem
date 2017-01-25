@@ -1,37 +1,36 @@
-class Top25::CLI
-  def call
-    search_for
-  end
-  
+
+class Cli
   def search_for
     search =""
-    pust "What would you like to search for?"
+    puts "Welcome to Top25!"
+    puts "================="
+    puts "What would you like to search for?"
+    puts "1. Hotels\n2. Restaurants\n3. Beaches"
     search = gets.strip
     case search.downcase
-      when "hotels"
-        make_places(Hotel,"Hotels")
-        display_places(Hotel)
-      when "restuarants"
-        make_places(Restaurant,"Restaurants")
-        display_places(Restaurant)
-      when "beaches"
-        make_places(Beach,"Beaches")
-        display_places(Beach)
+    when "1"
+        make_places("Hotels")
+        display_places
+      when "2"
+        make_places("Restaurants")
+        display_places
+      when "3"
+        make_places("Beaches")
+        display_places
       else
         puts "sorry, you only can search hotels,restaurants and beaches"
       end
   end
 
-  def make_places(placemodel,name)
+  def make_places(name)
     arrofplaces = Scraper.scrap(name)
-    placemodel.create_from_collection(arrofplaces)
+    Place.create_from_collection(arrofplaces)
   end
 
-  def display_places(placemodel)
-    placemodel.all.each do |pl|
+  def display_places
+    Place.all.each do |pl|
       puts "#{pl.num}. #{pl.name}-based in: #{pl.location}"
     end
      puts "----------------------".colorize(:green)
   end
-
 end

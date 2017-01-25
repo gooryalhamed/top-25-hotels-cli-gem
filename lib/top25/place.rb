@@ -1,4 +1,4 @@
-class Top25::Place
+class Place
   attr_accessor :num, :name, :location
   @@all =[]
   def initialize(attr_hash)   #{name: "", location: "", description:""}
@@ -14,7 +14,7 @@ class Top25::Place
 
   def self.create_from_collection(arr)
     arr.each do |hash|
-      Place.new(hash)
+      self.new(hash)
     end
   end
 

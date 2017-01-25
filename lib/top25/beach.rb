@@ -1,2 +1,0 @@
-class Beach < Place
-end
