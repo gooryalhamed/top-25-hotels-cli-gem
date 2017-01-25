@@ -1,3 +1,3 @@
-module
-  VERSION = "0.0.1"
+module Top25
+  VERSION = "0.1.0"
 end

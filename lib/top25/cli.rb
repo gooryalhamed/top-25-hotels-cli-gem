@@ -1,11 +1,8 @@
-require_relative './place.rb'
-require_relative './hotel.rb'
-require_relative './restuarant.rb'
-require_relative './beach.rb'
-require './scraper.rb'
-require 'colorize'
-
-class CommandLineInterface
+class Top25::CLI
+  def call
+    search_for
+  end
+  
   def search_for
     search =""
     pust "What would you like to search for?"

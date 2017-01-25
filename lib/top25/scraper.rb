@@ -1,7 +1,4 @@
-require 'nokogiri'
-require 'open-uri'
-
-class Scraper
+class Top25::Scraper
   def self.scrap(placename)
     scrapped_places =[]
     html = open("https://www.tripadvisor.com/TravelersChoice-#{placename}")
