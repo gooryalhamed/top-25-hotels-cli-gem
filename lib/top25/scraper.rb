@@ -6,21 +6,25 @@ class Top25::Scraper
     scrapped_page = Nokogiri::HTML(html)
     array = scrapped_page.css("div#WINNERVIEWER")
 
-    array.each do |e|  #for each place we will make a hash
+    array.each do |pl|
 
-      e.css("div.winnerLayer").each do |attribute|      #{num=>"", :name =>"", :location =>""}
+      pl.css("div.posRel").each do |e|    #[0=> {num=>"", :name =>"", :location =>""}, 1 =>{}.... ]
         place = {}
-        num = attribute.css("div.posn").text.gsub(/\s/,"")
-        name = attribute.css("div.winnerName .mainName").text.gsub(/\s/,"")
-        location = attribute.css("div.winnerName .smaller").text.gsub(/\s/,"")
+        num = e.css("div.posn").text.gsub(/\s/,"")
+        name = e.css("div.winnerName .mainName").text.gsub(/\s/,"")
+        location = e.css("div.winnerName .smaller").text.gsub(/\s/,"")
+        url = e.css("div.misc a").attribute("href").value
+
         place[:num] = num
         place[:name] = name
         place[:location] = location
+        place[:url] = url
         scrapped_places << place
       end
     end
     return scrapped_places
   end
+
 def scrap_show_page(url)
   html = open("#{url}")
   scrapped_page = Nokogiri::HTML(html)
@@ -40,3 +44,6 @@ def scrap_show_page(url)
   end
 
 end
+#  html = open("https://www.tripadvisor.com/Hotel_Review-g274887-d7306673-Reviews-Aria_Hotel_Budapest_by_Library_Hotel_Collection-Budapest_Central_Hungary.html")
+#  scrapped_page = Nokogiri::HTML(html)
+#  arr1 = scrapped_page.css("div.bl_details")

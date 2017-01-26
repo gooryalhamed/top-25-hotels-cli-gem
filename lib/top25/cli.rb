@@ -8,23 +8,31 @@ class Top25::Cli
     search = gets.strip
     case search
     when "1"
-        make_places("Hotels")
-        display_places
+        run("Hotels")
       when "2"
-        make_places("Restaurants")
-        display_places
+        run("Restaurants")
       when "3"
-        make_places("Beaches")
-        display_places
+        run("Beaches")
       else
         puts "sorry, you only can search hotels,restaurants and beaches"
       end
-      answer = ""
+
+      choose =""
+      puts "choose one to get more information about it"
+      choose = gets.strip
+
+      research = ""
       puts "search_for or exit?"
-      answer = gets.strip
-      unless answer == "exit"
+      research = gets.strip
+      unless research == "exit"
         search_for
       end
+  end
+
+  def run(place)
+    make_places(place)
+    add_attributes
+    display_places
   end
 
   def make_places(name)
@@ -38,6 +46,14 @@ class Top25::Cli
       puts "#{pl.num}. #{pl.name}-based in: #{pl.location}"
     end
      puts "----------------------".colorize(:green)
+  end
+
+  def add_attributes
+    Top25::Place.all.each do |place|
+    h =Top25::Scraper.scrap_show_page(place.url)
+    place.add_attr(h)
+  end
+
   end
 
 

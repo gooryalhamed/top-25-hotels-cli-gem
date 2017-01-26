@@ -1,5 +1,5 @@
 class Top25::Place
-  attr_accessor :num, :name, :location
+  attr_accessor :num, :name, :location, :phone, :website, :address, :description, :url
   @@all =[]
   def initialize(attr_hash)   #{name: "", location: "", description:""}
     attr_hash.each do |attr, v|
@@ -17,5 +17,12 @@ class Top25::Place
       self.new(hash)
     end
   end
+
+def add_attr(h)
+  h.each do |k, v|
+    self.send("#{h}=",v)
+  end
+  self
+end
 
 end
