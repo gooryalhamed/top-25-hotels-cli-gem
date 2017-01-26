@@ -1,5 +1,5 @@
-class Scraper
-
+class Top25::Scraper
+  
   def scrap(placename)
     scrapped_places =[]
     html = open("https://www.tripadvisor.com/TravelersChoice-#{placename}")

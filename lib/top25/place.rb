@@ -1,4 +1,4 @@
-class Place
+class Top25::Place
   attr_accessor :num, :name, :location
   @@all =[]
   def initialize(attr_hash)   #{name: "", location: "", description:""}
