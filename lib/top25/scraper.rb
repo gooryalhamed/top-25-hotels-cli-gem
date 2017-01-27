@@ -44,6 +44,3 @@ def scrap_show_page(url)
   end
 
 end
-#  html = open("https://www.tripadvisor.com/Hotel_Review-g274887-d7306673-Reviews-Aria_Hotel_Budapest_by_Library_Hotel_Collection-Budapest_Central_Hungary.html")
-#  scrapped_page = Nokogiri::HTML(html)
-#  arr1 = scrapped_page.css("div.bl_details")

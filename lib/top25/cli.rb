@@ -16,45 +16,64 @@ class Top25::Cli
       else
         puts "sorry, you only can search hotels,restaurants and beaches"
       end
-
-      choose =""
-      puts "choose one to get more information about it"
-      choose = gets.strip
-
-      research = ""
-      puts "search_for or exit?"
-      research = gets.strip
-      unless research == "exit"
-        search_for
-      end
   end
 
   def run(place)
     make_places(place)
     add_attributes
     display_places
-  end
+
+    choose =""
+    puts "You can get more details about each one by pressing its number. If you want to go back type back"
+    choose = gets.strip
+    if choose.between?(1, 25)  then
+        display_one(place)
+        continue =""
+        continue = gets.strip
+        unless continue == "back"
+          display_one(place)
+        end
+    else
+      puts "you should enter a number between 1 and 25"
+    end
+    ## research for top25 h,r,b ##
+    research = ""
+    puts "search_for or exit?"
+    research = gets.strip
+    unless research == "exit"
+      search_for
+    end
+end
+
 
   def make_places(name)
     scraper = Top25::Scraper.new
     arrofplaces = scraper.scrap(name)
-    Top25::Place.create_from_collection(arrofplaces)
+    new_place.create_from_collection(arrofplaces)
   end
 
   def display_places
     Top25::Place.all.each do |pl|
       puts "#{pl.num}. #{pl.name}-based in: #{pl.location}"
+      end
+      puts "-------------------------------------".colorize(:green)
     end
-     puts "----------------------".colorize(:green)
-  end
 
-  def add_attributes
-    Top25::Place.all.each do |place|
-    h =Top25::Scraper.scrap_show_page(place.url)
-    place.add_attr(h)
-  end
+    def add_attributes
+        Top25::Place.all.each do |place|
+        h = Top25::Scraper.scrap_show_page(place.url)
+        place.add_attr(h)
+        end
+    end
 
-  end
-
+    def display_one(pl)
+      puts "#{pl.name}"
+      puts "**********************".colorize(:green)
+      puts "Address: #{pl.address}"
+      puts "Features: #{pl.info}"
+      puts "Phone number: #{pl.phone}"
+      puts "Website:#{pl.website}"
+      puts "-------------------------------------".colorize(:green)
+    end
 
 end
