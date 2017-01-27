@@ -1,6 +1,7 @@
 class Top25::Scraper
-
+BASE_URL = "https://www.tripadvisor.com"
   def scrap(placename)
+    
     scrapped_places =[]
     html = open("https://www.tripadvisor.com/TravelersChoice-#{placename}")
     scrapped_page = Nokogiri::HTML(html)
@@ -13,7 +14,7 @@ class Top25::Scraper
         num = e.css("div.posn").text.gsub(/\s/,"")
         name = e.css("div.winnerName .mainName").text.gsub(/\s/,"")
         location = e.css("div.winnerName .smaller").text.gsub(/\s/,"")
-        url = e.css("div.misc a").attribute("href").value
+        url = BASE_URL+ e.css("div.misc a").attribute("href").value
 
         place[:num] = num
         place[:name] = name

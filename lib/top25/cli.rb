@@ -3,7 +3,7 @@ class Top25::Cli
 
   def search_for
     search =""
-    puts "Search for the best in the world, choose on of the follwing number"
+    puts "Search for the best in the world, choose on of the follwing numbers"
     puts "1. Hotels\n2. Restaurants\n3. Beaches"
     search = gets.strip
     case search
