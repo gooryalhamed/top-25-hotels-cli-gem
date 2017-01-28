@@ -1,9 +1,9 @@
 class Top25::Place
-  attr_accessor :num, :name, :location, :phone, :website, :address, :description, :url
+  attr_accessor :num, :name, :location, :url
   @@all =[]
-  def initialize(attr_hash)   #{name: "", location: "", description:""}
-    attr_hash.each do |attr, v|
-      self.send("#{attr}=",v)
+  def initialize(attr_hash)   #{name: "", location: "", :address =>""}
+    attr_hash.each do |attribute, v|
+      self.send("#{attribute}=",v)
     end
     @@all << self
   end
@@ -26,3 +26,4 @@ def add_attr(h)
 end
 
 end
+## @@all will only contain one place at a time hotels, restaurants or beaches
