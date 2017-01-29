@@ -4,4 +4,4 @@ require './lib/top25'
   puts "============================"
   puts "     Welcome to Top25!     ".colorize(:blue)
   puts "============================"
-Top25::Cli.new.search_for
+  Top25::Cli.new.take_input

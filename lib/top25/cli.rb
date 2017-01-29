@@ -1,25 +1,32 @@
 class Top25::Cli
 
-    def home
-      puts "Search for the best in the world, choose on of the follwing numbers"
-      puts "1. Hotels\n2. Restaurants\n3. Beaches\n4. e for exit\n5. b for be back"
-    end
+  def home
+      puts "Search for the best in the world, choose one of the follwing numbers"
+      puts "1. Hotels\n2. Restaurants\n3. Beaches\n4. e for exit\n5. b for going back"
+  end
 
-def search(s)
-  home
-  input =""
-  input = gets.strip
-  case s
+  def take_input
+    input =""
+    input = gets.strip
+    search(input)
+  end
+
+  def search(s)
+    case s
     when "1"
       run("Hotels")
+      take_input
     when "2"
       run("Restaurants")
+      take_input
     when "3"
       run("Beaches")
+      take_input
     when "b"
-      home
-    when s!= "1" || s!= "2" || s!="3" || s!="b"
+      take_input
+    when s != "1" || s != "2" || s !="3" || s !="b"
         puts "sorry, you only can search hotels,restaurants and beaches"
+        take_input
     when "e"
       puts "Good bye!!"
     end
