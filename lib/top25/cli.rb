@@ -3,6 +3,7 @@ class Top25::Cli
   def home
       puts "Search for the best in the world, choose one of the follwing numbers"
       puts "1. Hotels\n2. Restaurants\n3. Beaches\n4. e for exit\n5. b for going back"
+      take_input
   end
 
   def take_input
@@ -23,7 +24,7 @@ class Top25::Cli
       run("Beaches")
       take_input
     when "b"
-      take_input
+      home
     when s != "1" || s != "2" || s !="3" || s !="b"
         puts "sorry, you only can search hotels,restaurants and beaches"
         take_input
