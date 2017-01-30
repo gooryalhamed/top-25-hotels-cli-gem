@@ -17,13 +17,15 @@ class Top25::Place
       self.new(hash)
     end
   end
-
+end
+=begin
 def add_attr(h)
   h.each do |k, v|
     self.send("#{h}=",v)
   end
   self
 end
+=end
 
-end
+
 ## @@all will only contain one place at a time hotels, restaurants or beaches

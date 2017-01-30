@@ -2,7 +2,7 @@
 require './lib/top25'
 
   puts"@&@&@&@&@&@&@&@&@&@&@&@&@&@&@&".colorize(:yellow)
-  puts "                            "
+  puts "                             "
   puts "      Welcome to Top25!      "
   puts "                             "
   puts"@&@&@&@&@&@&@&@&@&@&@&@&@&@&@&".colorize(:yellow)
