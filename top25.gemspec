@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "top25"
   spec.version       = top25::VERSION
   spec.authors       = ["Yardagan AL Hamed"]
-  spec.email         = ["gooryalhamed@hotmail.com"]
+  spec.email         = ["yarda.hamed@gmail.com"]
 
   spec.summary       = %q{TODO: search for best 25 hotels,restaurants and beaches.}
   spec.description   = %q{TODO: This gem is a cli data gem, it allows the user to search for the best 25 hotels,restaurants and beaches in the world.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "TODO: https://learn.co/gooryalhamed"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
