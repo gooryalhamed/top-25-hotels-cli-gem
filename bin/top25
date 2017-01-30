@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 require './lib/top25'
 
-  puts "============================"
-  puts "     Welcome to Top25!     ".colorize(:blue)
-  puts "============================"
+  puts"@&@&@&@&@&@&@&@&@&@&@&@&@&@&@&".colorize(:yellow)
+  puts "                            "
+  puts "      Welcome to Top25!      "
+  puts "                             "
+  puts"@&@&@&@&@&@&@&@&@&@&@&@&@&@&@&".colorize(:yellow)
   Top25::Cli.new.home

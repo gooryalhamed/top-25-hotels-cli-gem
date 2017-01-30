@@ -15,12 +15,18 @@ class Top25::Cli
   def search(s)
     case s
     when "1"
+      puts "Top 25 Hotels"
+      puts "=================".colorize(:blue)
       run("Hotels")
       take_input
     when "2"
+      puts "Top 25 Restaurants"
+      puts "=================".colorize(:blue)
       run("Restaurants")
       take_input
     when "3"
+      puts "Top 25 Beaches"
+      puts "=================".colorize(:blue)
       run("Beaches")
       take_input
     when "b"
@@ -29,7 +35,7 @@ class Top25::Cli
         puts "sorry, you only can search hotels,restaurants and beaches"
         take_input
     when "e"
-      puts "Good bye!!"
+      puts "Good bye ^ _ ^"
     end
 end
 

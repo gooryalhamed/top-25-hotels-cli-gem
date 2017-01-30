@@ -1,6 +1,6 @@
 # Top25
 
-allows travilers to find best 25 hotels, restaurants and beaches.
+Allows travilers to find best 25 hotels, restaurants and beaches.
 
 ## Installation
 
