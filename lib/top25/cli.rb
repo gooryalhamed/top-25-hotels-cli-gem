@@ -13,28 +13,27 @@ class Top25::Cli
   end
 
   def search(s)
-    case s
-    when "1"
+    if s == "1"
       puts "Top 25 Hotels"
       puts "=================".colorize(:blue)
       run("Hotels")
       take_input
-    when "2"
+    elsif s == "2"
       puts "Top 25 Restaurants"
       puts "=================".colorize(:blue)
       run("Restaurants")
       take_input
-    when "3"
+    elsif s == "3"
       puts "Top 25 Beaches"
       puts "=================".colorize(:blue)
       run("Beaches")
       take_input
-    when "b"
+    elsif s == "b"
       home
-    when s != "1" || s != "2" || s !="3" || s !="b"
+    elsif !(s.to_i.between?(1, 3)) && (s != "e")
         puts "sorry, you only can search hotels,restaurants and beaches"
         take_input
-    when "e"
+    elsif s == "e"
       puts "Good bye ^ _ ^"
     end
 end
