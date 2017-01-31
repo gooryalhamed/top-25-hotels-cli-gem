@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://https://learn.co/gooryalhamed"
 
   spec.files         = `git ls-files`.split($\)
-  spec.executables   = ["top25"]
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.name          = "top25"
   spec.require_paths = ["lib", "lib/top25"]
