@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["yarda.hamed@gmail.com"]
   spec.description   = %q{This gem allows users to search for best 25 hotels, restaurants and beaches in the world.}
   spec.summary       = %q{Top 25 cli data gem}
-  spec.homepage      = "https://https://learn.co/gooryalhamed"
+  spec.homepage      = "https://learn.co/gooryalhamed"
 
   spec.files         = `git ls-files`.split($\)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
