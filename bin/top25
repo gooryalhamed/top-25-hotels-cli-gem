@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-#require 'top25'
- require './lib/top25'
+require 'top25'
 
   puts"@&@&@&@&@&@&@&@&@&@&@&@&@&@&@&".colorize(:yellow)
   puts "                             "
