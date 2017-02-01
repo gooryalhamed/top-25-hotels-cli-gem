@@ -2,7 +2,7 @@ class Top25::Cli
 
   def home
       puts "Search for the best in the world, choose one of the follwing numbers"
-      puts "1. Hotels\n2. Restaurants\n3. Beaches\n4. e for exit\n5. b for going back"
+      puts "1. Hotels\n2. Restaurants\n3. Beaches\n4. for exit"
       take_input
   end
 
@@ -17,23 +17,21 @@ class Top25::Cli
       puts "Top 25 Hotels"
       puts "=================".colorize(:blue)
       run("Hotels")
-      take_input
+      home
     elsif s == "2"
       puts "Top 25 Restaurants"
       puts "=================".colorize(:blue)
       run("Restaurants")
-      take_input
+      home
     elsif s == "3"
       puts "Top 25 Beaches"
       puts "=================".colorize(:blue)
       run("Beaches")
-      take_input
-    elsif s == "b"
       home
-    elsif !(s.to_i.between?(1, 3)) && (s != "e")
+    elsif !(s.to_i.between?(1, 4))
         puts "sorry, you only can search hotels,restaurants and beaches"
-        take_input
-    elsif s == "e"
+        home
+    elsif s == "4"
       puts "Good bye ^ _ ^"
     end
 end
